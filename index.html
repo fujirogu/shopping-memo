@@ -6,33 +6,58 @@
     <title>買い物メモ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="icon.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
-    <div class="container">
+    <!-- 買い物メモ画面 -->
+    <div class="screen" id="screen-shopping">
+        <div class="container">
 
-        <h1>🛒 買い物メモ</h1>
+            <h1>🛒 買い物メモ</h1>
 
-        <button id="speechButton">
-            🎤 音声入力開始
-        </button>
+            <button id="speechButton">
+                🎤 音声入力開始
+            </button>
 
-        <div id="status">
-            待機中
+            <div id="status">待機中</div>
+
+            <ul id="memoList"></ul>
+
+            <button id="clearButton">全削除</button>
+
+            <button id="switchToMemo" onclick="switchTo('memo')">
+                📝 備忘録へ
+            </button>
+
         </div>
+    </div>
 
-        <ul id="memoList">
-        </ul>
+    <!-- 備忘録画面 -->
+    <div class="screen hidden" id="screen-memo">
+        <div class="container">
 
-        <button id="clearButton">
-            全削除
-        </button>
+            <h1>📝 備忘録</h1>
 
+            <button id="speechButtonMemo">
+                🎤 音声入力開始
+            </button>
+
+            <div id="statusMemo">待機中</div>
+
+            <ul id="memoListNote"></ul>
+
+            <button id="clearButtonMemo">全削除</button>
+
+            <button id="switchToShopping" onclick="switchTo('shopping')">
+                🛒 買い物メモへ
+            </button>
+
+        </div>
     </div>
 
     <script src="app.js"></script>
 
 </body>
-</html> 
+</html>
